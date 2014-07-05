@@ -8,7 +8,7 @@
 
 using namespace std;
 
-bool checker (double a, double b  , double c) {  // функция для проверки НЕ(Ац или БЦ) И (Ац МОД2 Сц) //Если возвращает 
+bool checker (double a, double b  , double c) {  // function which checks НЕ(Ац или БЦ) И (Ац МОД2 Сц) // 
 
 	if(  (!( (int) a || (int) b) && (  ((int)a + (int)c)%2))!=0){
 		return true;
@@ -20,7 +20,7 @@ bool checker (double a, double b  , double c) {  // функция для проверки НЕ(Ац и
 
 
 void Calcute_func (double X_start , double X_end , double dx , double a, double b, double c , bool checker){
-	int counter =1; // лічильник
+	int counter =1; // counter
 	double tmp=0;
 	
 for(double i = X_start; i< X_end; i=i+dx){
@@ -94,32 +94,32 @@ next:
 		
 
 one:
-cout<<"Введите начало интервала:"<<endl;
+cout<<"Enter X_start:"<<endl;
 cin>>X_start; 
 if(isdigit(X_start)==true){
 	  goto one;}
   
  
 
-cout<<"Введите конец интервала:"<<endl;
+cout<<"Enter X_end:"<<endl;
   cin>>X_end;
 
   if(X_end<X_start){
-	  cout<<"Стартовые координаты должны быть меньше чем конечные"<<endl;
+	  cout<<"X_end should be > X_start"<<endl;
 	  goto one;
   }
 
-cout<<"Введите шаг:"<<endl;
+cout<<"Enter step:"<<endl;
   cin>>dx;
 
-cout<<"Введите a,b,c"<<endl;
+cout<<"Enter: a,b,c"<<endl;
   cin>>a>>b>>c;
 	bool check_in  = checker(a,b,c);
 
 	cout<<check_in<<endl;
 	Calcute_func(X_start, X_end, dx , a ,b,c , check_in);	
 
-	cout<<"Хотите продолжить?";
+	cout<<"You want to continue?";
 	
 	once_again: // go to ^_^
 	cin>>answer; 
