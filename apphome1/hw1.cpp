@@ -4,14 +4,7 @@
 #include <ctype.h>
 #include <string>
 #include <math.h>
-
-
 using namespace std;
-
-
-
-
-
 
 bool checker (double a, double b  , double c) {  // function which checks ÍÅ(Àö èëè ÁÖ) È (Àö ÌÎÄ2 Ñö) // 
 
@@ -22,7 +15,6 @@ bool checker (double a, double b  , double c) {  // function which checks ÍÅ(Àö 
 		return false; // otherwise returns Integer
 
 }
-
 
 void Calcute_func (double X_start , double X_end , double dx , double a, double b, double c , bool checker){ // if FALSE - Integer if TRUE - Real number
 	int counter =1; // counter
@@ -81,18 +73,7 @@ void Calcute_func (double X_start , double X_end , double dx , double a, double 
 }
 
 
-
-
-
-
 int main(){
-
-
-	
-
-
-
-
 
 	setlocale( LC_CTYPE,"Russian" ); 
 	double X_start =0 , X_end=0, dx=0;
@@ -100,9 +81,7 @@ int main(){
 	string answer;
 	bool check_answer;
 
-
 	do {
-
 
 
 one:
