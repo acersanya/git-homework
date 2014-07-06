@@ -8,6 +8,11 @@
 
 using namespace std;
 
+
+
+
+
+
 bool checker (double a, double b  , double c) {  // function which checks ÍÅ(Àö èëè ÁÖ) È (Àö ÌÎÄ2 Ñö) // 
 
 	if(  (!( (int) a || (int) b) && (  ((int)a + (int)c)%2))!=0){
@@ -81,40 +86,49 @@ void Calcute_func (double X_start , double X_end , double dx , double a, double 
 
 
 int main(){
+
+
+	
+
+
+
+
+
 	setlocale( LC_CTYPE,"Russian" ); 
-	double X_start , X_end, dx;
-	double a,b,c;
+	double X_start =0 , X_end=0, dx=0;
+	double a=0,b=0,c=0;
 	string answer;
 	bool check_answer;
 
 
 	do {
 
-next:
 
 
 one:
-		cout<<"Enter X_start:"<<endl;
-		cin>>X_start; 
-		if(isdigit(X_start)==true){
-			goto one;}
 
+		cout<<"Enter X_start , X_end , dx:"<<endl;
 
+		while(!((cin >> X_start) && (cin>> X_end) && (cin>>dx))){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid input. ONLY DIGITS ARE ALLOWED ";
+    }
+		if(X_end<X_start) { cout<<"try again X_end > X_start"<<endl; goto one;}
 
-		cout<<"Enter X_end:"<<endl;
-		cin>>X_end;
-
-		if(X_end<X_start){
-			cout<<"X_end should be > X_start"<<endl;
-			goto one;
-		}
-
-		cout<<"Enter step:"<<endl;
-		cin>>dx;
+		
 
 		cout<<"Enter: a,b,c"<<endl;
-		cin>>a>>b>>c;
-		bool check_in  = checker(a,b,c);
+	
+		while(!((cin >> a) && (cin>> b) && (cin>>c))){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid input. ONLY DIGITS ARE ALLOWED ";
+    }
+
+
+
+		bool check_in  = checker(a,b,c); // calculates the task  HE(Ac or Bc) and (Ac mod2 Bc)
 
 		cout<<check_in<<endl;
 		Calcute_func(X_start, X_end, dx , a ,b,c , check_in);	
